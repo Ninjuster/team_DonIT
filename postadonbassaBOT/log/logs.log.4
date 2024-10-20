@@ -1,0 +1,1193 @@
+2024-10-19 16:28:03,778 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 16:28:03,778 [  INFO  ] (base.py:_execute_context:1846): PRAGMA main.table_info("users")
+2024-10-19 16:28:03,779 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:28:03,781 [  INFO  ] (base.py:_execute_context:1846): PRAGMA temp.table_info("users")
+2024-10-19 16:28:03,782 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:28:03,784 [  INFO  ] (base.py:_execute_context:1846): 
+CREATE TABLE users (
+	user_id INTEGER NOT NULL, 
+	username TEXT, 
+	real_name TEXT, 
+	created_at TEXT DEFAULT (datetime('now')), 
+	PRIMARY KEY (user_id)
+)
+
+
+2024-10-19 16:28:03,784 [  INFO  ] (base.py:_execute_context:1846): [no key 0.00036s] ()
+2024-10-19 16:28:03,792 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 16:28:07,689 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 16:28:07,826 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @HelperTested_bot id=7541380356 - 'Helper TEST'
+2024-10-19 16:28:16,761 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 16:28:17,026 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\hakaton\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\hakaton\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 16:28:17,031 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\hakaton\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 16:28:17,032 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @HelperTested_bot id=7541380356 - 'Helper TEST'
+2024-10-19 16:56:28,125 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 16:56:28,125 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:56:28,593 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 16:56:28,594 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:56:29,053 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 16:56:29,054 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:56:29,384 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 16:56:29,390 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 16:56:29,391 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00098s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 16:56:29,761 [  INFO  ] (base.py:_execute_context:1846): 
+CREATE TABLE users1 (
+	user_id SERIAL NOT NULL, 
+	username TEXT, 
+	real_name TEXT, 
+	PRIMARY KEY (user_id)
+)
+
+
+2024-10-19 16:56:29,761 [  INFO  ] (base.py:_execute_context:1846): [no key 0.00050s] ()
+2024-10-19 16:56:30,004 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 16:56:30,708 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 13, in bot_start
+    await bot.delete_webhook(drop_pending_updates=True)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\client\bot.py", line 1285, in delete_webhook
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\client\bot.py", line 488, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 181, in make_request
+    async with session.post(
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\client.py", line 1359, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\client.py", line 663, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\connector.py", line 563, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\connector.py", line 1032, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\connector.py", line 1335, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiohttp\connector.py", line 1098, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs, sock=sock)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1098, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1131, in _create_connection_transport
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 16:56:30,716 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 16:58:12,223 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 16:58:12,223 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:58:12,589 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 16:58:12,590 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:58:12,957 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 16:58:12,958 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 16:58:13,232 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 16:58:13,235 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 16:58:13,235 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00044s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 16:58:13,510 [  INFO  ] (base.py:_execute_context:1846): 
+CREATE TABLE users1 (
+	user_id SERIAL NOT NULL, 
+	username TEXT, 
+	real_name TEXT, 
+	PRIMARY KEY (user_id)
+)
+
+
+2024-10-19 16:58:13,511 [  INFO  ] (base.py:_execute_context:1846): [no key 0.00031s] ()
+2024-10-19 16:58:13,716 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 16:58:15,021 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 16:58:15,120 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 16:58:21,403 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780519 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 16:59:01,629 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780520 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 16:59:01,629 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780520 by bot id=8144851601
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 22, in handler
+    payload = decode_payload(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\utils\payload.py", line 94, in decode_payload
+    return original_payload.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+2024-10-19 16:59:45,231 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780521 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 16:59:45,231 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780521 by bot id=8144851601
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 22, in handler
+    payload = decode_payload(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\utils\payload.py", line 94, in decode_payload
+    return original_payload.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+2024-10-19 17:00:04,128 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780522 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:00:04,128 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780522 by bot id=8144851601
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 22, in handler
+    payload = decode_payload(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\utils\payload.py", line 94, in decode_payload
+    return original_payload.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+2024-10-19 17:00:13,962 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780523 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:00:20,388 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780524 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:00:20,389 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780524 by bot id=8144851601
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 22, in handler
+    payload = decode_payload(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\utils\payload.py", line 94, in decode_payload
+    return original_payload.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+2024-10-19 17:00:31,969 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:00:32,233 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 17:00:32,234 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 17:00:32,235 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:00:43,305 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:00:43,306 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:43,783 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:00:43,783 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:44,261 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:00:44,261 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:44,611 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:00:44,615 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:00:44,615 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00040s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:00:44,973 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:00:46,155 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:00:46,245 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:00:46,262 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:00:46,521 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 17:00:46,522 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 17:00:46,523 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:00:56,644 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:00:56,645 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:57,019 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:00:57,019 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:57,390 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:00:57,391 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:00:57,670 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:00:57,675 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:00:57,676 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00061s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:00:57,976 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:00:59,220 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:00:59,364 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:02:11,811 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780525 is not handled. Duration 67860 ms by bot id=8144851601
+2024-10-19 17:02:11,811 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780525 by bot id=8144851601
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 22, in handler
+    payload = decode_payload(args)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\utils\payload.py", line 94, in decode_payload
+    return original_payload.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 0: invalid continuation byte
+2024-10-19 17:02:11,819 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-10-19 17:02:11,820 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8144851601)
+2024-10-19 17:02:16,628 [  INFO  ] (dispatcher.py:_listen_updates:233): Connection established (tryings = 1, bot id = 8144851601)
+2024-10-19 17:05:36,162 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:05:36,163 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:05:36,571 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:05:36,571 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:05:36,979 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:05:36,980 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:05:37,291 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:05:37,296 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:05:37,296 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00064s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:05:37,615 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:05:38,968 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:05:39,094 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:05:42,901 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780528 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:05:48,460 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780529 is handled. Duration 1016 ms by bot id=8144851601
+2024-10-19 17:09:38,486 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:09:58,400 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:09:58,400 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:09:59,087 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:09:59,087 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:09:59,504 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:09:59,505 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:10:00,182 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:10:00,187 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:10:00,188 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00061s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:10:01,013 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:10:02,601 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:10:02,691 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:10:55,469 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:11:03,257 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:11:03,257 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:11:03,686 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:11:03,687 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:11:04,154 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:11:04,154 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:11:04,466 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:11:04,471 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:11:04,471 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00060s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:11:04,774 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:11:06,001 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:11:06,102 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:12:00,676 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780530 is handled. Duration 1139 ms by bot id=8144851601
+2024-10-19 17:17:38,603 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:17:47,672 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:17:47,673 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:17:48,135 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:17:48,135 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:17:48,578 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:17:48,578 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:17:48,909 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:17:48,915 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:17:48,915 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00061s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:17:49,260 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:17:50,549 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:17:50,644 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:18:55,007 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:18:55,262 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 17:18:55,267 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 17:18:55,268 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:19:23,130 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:19:23,130 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:19:23,554 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:19:23,555 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:19:23,992 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:19:23,993 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:19:24,329 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:19:24,335 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:19:24,335 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00065s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:19:24,644 [  INFO  ] (base.py:_execute_context:1846): 
+CREATE TABLE users1 (
+	hash SERIAL NOT NULL, 
+	user_id INTEGER, 
+	username VARCHAR, 
+	fio VARCHAR NOT NULL, 
+	branch VARCHAR NOT NULL, 
+	password VARCHAR NOT NULL, 
+	disability BOOLEAN NOT NULL, 
+	PRIMARY KEY (hash)
+)
+
+
+2024-10-19 17:19:24,644 [  INFO  ] (base.py:_execute_context:1846): [no key 0.00054s] ()
+2024-10-19 17:19:24,867 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:19:26,076 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:19:26,163 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:23:43,271 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:23:43,526 [CRITICAL] (main.py:bot_start:19): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-19 17:23:43,531 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-19 17:23:43,533 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:33:29,422 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:33:29,423 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:29,867 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:33:29,868 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:30,299 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:33:30,299 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:30,606 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:33:30,613 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:33:30,613 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00084s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:33:30,923 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:33:45,644 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-19 17:33:45,644 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:46,077 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-19 17:33:46,077 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:46,501 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-19 17:33:46,501 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-19 17:33:46,820 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-19 17:33:46,826 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-19 17:33:46,827 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00065s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-19 17:33:47,150 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-19 17:33:48,396 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:33:48,488 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:33:55,018 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780531 is handled. Duration 1030 ms by bot id=8144851601
+2024-10-19 17:43:37,335 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:44:04,265 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:44:04,378 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:44:46,842 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:44:53,066 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:44:53,170 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:44:57,207 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780532 is handled. Duration 920 ms by bot id=8144851601
+2024-10-19 17:44:58,595 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780533 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:45:30,618 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:45:50,103 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:45:50,264 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:46:04,671 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780535 is handled. Duration 1186 ms by bot id=8144851601
+2024-10-19 17:46:05,152 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780536 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-19 17:46:42,845 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:47:23,728 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:47:23,858 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:47:27,800 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780537 is handled. Duration 1109 ms by bot id=8144851601
+2024-10-19 17:48:43,945 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-19 17:48:50,282 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-19 17:48:50,400 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-19 17:48:52,859 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780538 is handled. Duration 985 ms by bot id=8144851601
+2024-10-19 17:51:46,966 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 00:17:01,292 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 00:17:01,360 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 00:17:05,550 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:05,551 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8144851601)
+2024-10-20 00:17:10,716 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:10,717 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.304156 seconds and try again... (tryings = 1, bot id = 8144851601)
+2024-10-20 00:17:16,197 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:16,198 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.811070 seconds and try again... (tryings = 2, bot id = 8144851601)
+2024-10-20 00:17:22,373 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:22,374 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 2.371139 seconds and try again... (tryings = 3, bot id = 8144851601)
+2024-10-20 00:17:28,615 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 00:17:47,722 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 00:17:47,789 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 00:17:51,971 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:51,971 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8144851601)
+2024-10-20 00:17:57,122 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:17:57,122 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.361778 seconds and try again... (tryings = 1, bot id = 8144851601)
+2024-10-20 00:18:02,983 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:18:02,984 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.671985 seconds and try again... (tryings = 2, bot id = 8144851601)
+2024-10-20 00:18:09,605 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-10-20 00:18:09,605 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 2.121024 seconds and try again... (tryings = 3, bot id = 8144851601)
+2024-10-20 00:18:10,290 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 00:18:28,591 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 00:18:28,661 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 00:18:32,503 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780554 is handled. Duration 250 ms by bot id=8144851601
+2024-10-20 01:19:22,444 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:19:22,713 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:19:22,719 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:19:22,721 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:19:29,040 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:19:29,155 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:19:34,945 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780555 is handled. Duration 953 ms by bot id=8144851601
+2024-10-20 01:25:30,500 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:25:30,753 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:25:30,758 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:25:30,759 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:25:36,663 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:25:36,773 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:25:39,130 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780556 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 01:26:26,602 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:26:26,867 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:26:26,872 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:26:26,873 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:26:32,657 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:26:32,744 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:26:35,016 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780557 is handled. Duration 1093 ms by bot id=8144851601
+2024-10-20 01:26:36,106 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780558 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 01:27:15,500 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:27:15,761 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:27:15,766 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:27:15,767 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:27:21,442 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:27:21,531 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:27:24,144 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780559 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 01:27:24,145 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780559 by bot id=8144851601
+TypeError: KeyboardBuilder.as_markup() takes 1 positional argument but 5 were given
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 32, in main_menu
+    await call.message.answer("Выберите желаемую категорию: ", reply_markup=kb.category())
+                                                                            ^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\kb.py", line 35, in category
+    return builder.as_markup(2,2,2,2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: KeyboardBuilder.as_markup() takes 1 positional argument but 5 were given
+2024-10-20 01:27:32,732 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:27:32,987 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:27:32,989 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:27:32,990 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:27:38,865 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:27:38,979 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:27:40,561 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780560 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 01:27:40,562 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780560 by bot id=8144851601
+TypeError: KeyboardBuilder.as_markup() takes 1 positional argument but 4 were given
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 32, in main_menu
+    await call.message.answer("Выберите желаемую категорию: ", reply_markup=kb.category())
+                                                                            ^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\kb.py", line 35, in category
+    return builder.as_markup(2,2,2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: KeyboardBuilder.as_markup() takes 1 positional argument but 4 were given
+2024-10-20 01:28:11,214 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:28:11,474 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:28:11,476 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:28:11,477 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:28:18,356 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:28:18,441 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:28:21,857 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780561 is handled. Duration 1141 ms by bot id=8144851601
+2024-10-20 01:29:06,106 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:29:06,361 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:29:06,365 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:29:06,367 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:29:12,166 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:29:12,256 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:29:19,809 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780562 is handled. Duration 985 ms by bot id=8144851601
+2024-10-20 01:38:14,130 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:38:14,152 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2672)
+2024-10-20 01:38:14,153 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8144851601)
+2024-10-20 01:38:14,392 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:38:14,396 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:38:14,398 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:38:20,456 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:38:20,545 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:38:25,806 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780563 is handled. Duration 969 ms by bot id=8144851601
+2024-10-20 01:38:26,785 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780564 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 01:38:33,432 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780565 is handled. Duration 141 ms by bot id=8144851601
+2024-10-20 01:38:35,001 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780566 is handled. Duration 139 ms by bot id=8144851601
+2024-10-20 01:38:59,942 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:39:00,200 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:39:00,206 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:39:00,207 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:39:05,882 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:39:05,997 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:39:13,217 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780567 is handled. Duration 1030 ms by bot id=8144851601
+2024-10-20 01:39:14,398 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780568 is handled. Duration 171 ms by bot id=8144851601
+2024-10-20 01:39:15,744 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780569 is handled. Duration 139 ms by bot id=8144851601
+2024-10-20 01:39:19,744 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780570 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 01:39:23,868 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780571 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 01:41:05,897 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:41:06,162 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:41:06,167 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:41:06,168 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:41:11,962 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:41:12,050 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:41:17,008 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780572 is handled. Duration 1000 ms by bot id=8144851601
+2024-10-20 01:41:18,694 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780573 is handled. Duration 203 ms by bot id=8144851601
+2024-10-20 01:41:38,327 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780574 is handled. Duration 1000 ms by bot id=8144851601
+2024-10-20 01:41:39,257 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:41:39,510 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:41:39,515 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:41:39,516 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:41:45,292 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:41:45,385 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:41:49,830 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780575 is handled. Duration 1000 ms by bot id=8144851601
+2024-10-20 01:41:51,392 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780576 is handled. Duration 140 ms by bot id=8144851601
+2024-10-20 01:41:52,657 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780577 is handled. Duration 110 ms by bot id=8144851601
+2024-10-20 01:41:58,990 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780578 is handled. Duration 110 ms by bot id=8144851601
+2024-10-20 01:42:02,070 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780579 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 01:42:03,573 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780580 is handled. Duration 139 ms by bot id=8144851601
+2024-10-20 01:47:33,563 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:47:33,815 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:47:33,819 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:47:33,820 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:47:39,986 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:47:40,074 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:47:42,101 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780581 is handled. Duration 985 ms by bot id=8144851601
+2024-10-20 01:47:43,725 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780582 is handled. Duration 108 ms by bot id=8144851601
+2024-10-20 01:47:47,363 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780583 is handled. Duration 156 ms by bot id=8144851601
+2024-10-20 01:47:48,271 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780584 is handled. Duration 140 ms by bot id=8144851601
+2024-10-20 01:47:49,982 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780585 is handled. Duration 219 ms by bot id=8144851601
+2024-10-20 01:49:27,525 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 01:49:27,783 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 01:49:27,788 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 01:49:27,789 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:49:33,661 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 01:49:33,779 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 01:49:35,888 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780586 is handled. Duration 1015 ms by bot id=8144851601
+2024-10-20 01:49:36,936 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780587 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 01:49:42,172 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780588 is handled. Duration 93 ms by bot id=8144851601
+2024-10-20 02:02:24,870 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 02:02:25,131 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 02:02:25,136 [CRITICAL] (main.py:main:25): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 23, in main
+    await asyncio.gather(bot_app)
+asyncio.exceptions.CancelledError
+2024-10-20 02:02:25,138 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 02:02:31,264 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 02:02:31,376 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 02:02:33,780 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780589 is handled. Duration 921 ms by bot id=8144851601
+2024-10-20 02:02:34,585 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780590 is handled. Duration 140 ms by bot id=8144851601
+2024-10-20 02:02:35,390 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780591 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 02:02:58,296 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped

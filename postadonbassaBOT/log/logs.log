@@ -1,0 +1,958 @@
+2024-10-20 15:43:10,656 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:43:10,657 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3435s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:43:10,770 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:43:10,771 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.457s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:43:10,883 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:43:10,883 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5695s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:43:10,998 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:43:13,181 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:43:13,186 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:43:13,186 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00046s] (839405003,)
+2024-10-20 15:43:13,563 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:43:14,779 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780787 is handled. Duration 1593 ms by bot id=8144851601
+2024-10-20 15:43:16,823 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780788 is handled. Duration 250 ms by bot id=8144851601
+2024-10-20 15:43:18,119 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:43:18,121 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:43:18,121 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00044s] ('MP',)
+2024-10-20 15:43:18,483 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:43:18,734 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780789 is handled. Duration 609 ms by bot id=8144851601
+2024-10-20 15:43:20,967 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:43:20,968 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:43:20,968 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00041s] ()
+2024-10-20 15:43:21,320 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:43:21,608 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780790 is handled. Duration 640 ms by bot id=8144851601
+2024-10-20 15:45:30,196 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:45:30,309 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:45:31,274 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:45:31,274 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:45:31,699 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:45:31,699 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:45:32,114 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:45:32,114 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:45:32,432 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:45:32,437 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:45:32,438 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00063s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:45:32,746 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:45:32,746 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3089s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:45:32,846 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:45:32,847 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4096s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:45:32,947 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:45:32,947 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5105s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:45:33,049 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:45:34,649 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:45:34,654 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:45:34,654 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00047s] (839405003,)
+2024-10-20 15:45:34,956 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:45:35,765 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780792 is handled. Duration 1109 ms by bot id=8144851601
+2024-10-20 15:45:37,080 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780793 is handled. Duration 296 ms by bot id=8144851601
+2024-10-20 15:45:37,931 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:45:37,933 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:45:37,933 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00049s] ('MP',)
+2024-10-20 15:45:38,276 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:45:38,479 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780794 is handled. Duration 546 ms by bot id=8144851601
+2024-10-20 15:45:39,438 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:45:39,439 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:45:39,440 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00037s] ()
+2024-10-20 15:45:40,692 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:45:40,951 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780795 is handled. Duration 1514 ms by bot id=8144851601
+2024-10-20 15:45:44,325 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780796 is not handled. Duration 2625 ms by bot id=8144851601
+2024-10-20 15:45:45,623 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780796 by bot id=8144851601
+KeyError: 'code'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 79, in check
+    name = data["code"]
+           ~~~~^^^^^^^^
+KeyError: 'code'
+2024-10-20 15:46:12,281 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:46:12,382 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:46:13,673 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:46:13,673 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:14,125 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:46:14,126 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:14,581 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:46:14,581 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:14,920 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:46:14,925 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:14,926 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00061s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:15,267 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:15,268 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3427s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:15,388 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:15,388 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4634s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:15,507 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:15,508 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5829s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:15,621 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:46:19,359 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 15:46:25,758 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:46:25,846 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:46:27,024 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:46:27,025 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:27,429 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:46:27,429 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:27,841 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:46:27,841 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:46:28,140 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:46:28,145 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:28,145 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00055s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:28,453 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:28,453 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.309s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:28,553 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:28,554 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4091s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:28,659 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:46:28,659 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.515s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:46:28,759 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:46:38,560 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780797 is not handled. Duration 6094 ms by bot id=8144851601
+2024-10-20 15:46:39,677 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780797 by bot id=8144851601
+KeyError: 'name'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 79, in check
+    name = data["name"]
+           ~~~~^^^^^^^^
+KeyError: 'name'
+2024-10-20 15:46:59,529 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:46:59,619 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:47:00,751 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:47:00,751 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:47:01,177 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:47:01,177 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:47:01,610 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:47:01,610 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:47:01,927 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:47:01,931 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:47:01,932 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00059s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:47:02,247 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:47:02,248 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3161s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:47:02,350 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:47:02,351 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4197s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:47:02,455 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:47:02,456 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5245s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:47:02,560 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:47:04,115 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:47:04,120 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:47:04,120 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00045s] (839405003,)
+2024-10-20 15:47:04,560 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:47:04,580 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:47:04,581 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:47:04,581 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4613s ago] (839405003,)
+2024-10-20 15:47:04,891 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:47:05,737 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780798 is handled. Duration 3968 ms by bot id=8144851601
+2024-10-20 15:47:05,867 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780799 is handled. Duration 1297 ms by bot id=8144851601
+2024-10-20 15:47:07,400 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780800 is handled. Duration 250 ms by bot id=8144851601
+2024-10-20 15:47:13,993 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:47:13,995 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:47:13,995 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00043s] ('M',)
+2024-10-20 15:47:14,324 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:47:14,556 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780801 is handled. Duration 563 ms by bot id=8144851601
+2024-10-20 15:47:15,302 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:47:15,303 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:47:15,303 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00040s] ()
+2024-10-20 15:47:15,657 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:47:15,933 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780802 is handled. Duration 641 ms by bot id=8144851601
+2024-10-20 15:47:20,500 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780803 is not handled. Duration 3578 ms by bot id=8144851601
+2024-10-20 15:47:22,003 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780803 by bot id=8144851601
+KeyError: 'name'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 79, in check
+    name = data["name"]
+           ~~~~^^^^^^^^
+KeyError: 'name'
+2024-10-20 15:49:00,274 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780804 is not handled. Duration 86031 ms by bot id=8144851601
+2024-10-20 15:49:01,794 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780804 by bot id=8144851601
+KeyError: 'name'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 79, in check
+    category = data["category"]
+           ^^^^^^^^^^^^
+KeyError: 'name'
+2024-10-20 15:49:02,596 [ ERROR  ] (dispatcher.py:_listen_updates:219): Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-10-20 15:49:03,463 [WARNING ] (dispatcher.py:_listen_updates:221): Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8144851601)
+2024-10-20 15:49:07,008 [  INFO  ] (dispatcher.py:_listen_updates:233): Connection established (tryings = 1, bot id = 8144851601)
+2024-10-20 15:49:07,010 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:49:07,011 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:49:07,011 [  INFO  ] (base.py:_execute_context:1846): [cached since 122.9s ago] (839405003,)
+2024-10-20 15:49:07,299 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:49:08,433 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780805 is handled. Duration 1422 ms by bot id=8144851601
+2024-10-20 15:49:37,789 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 15:49:38,052 [CRITICAL] (main.py:bot_start:18): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 15, in bot_start
+    await dp.start_polling(bot)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 543, in start_polling
+    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 418, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 525, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2024-10-20 15:49:38,055 [CRITICAL] (main.py:main:26): Error: 
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\main.py", line 24, in main
+    await asyncio.gather(bot_app, db_app)
+asyncio.exceptions.CancelledError
+2024-10-20 15:49:38,056 [  INFO  ] (dispatcher.py:_polling:359): Polling stopped for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:49:47,458 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:49:47,550 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:49:48,419 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:49:48,419 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:49:48,784 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:49:48,785 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:49:49,149 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:49:49,149 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:49:49,424 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:49:49,429 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:49:49,429 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00062s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:49:49,702 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:49:49,703 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.2739s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:49:49,793 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:49:49,794 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3651s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:49:49,884 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:49:49,884 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4558s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:49:49,977 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:49:52,062 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:49:52,066 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:49:52,066 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00042s] (839405003,)
+2024-10-20 15:49:52,344 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:49:53,563 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780806 is handled. Duration 1500 ms by bot id=8144851601
+2024-10-20 15:49:54,657 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780807 is handled. Duration 156 ms by bot id=8144851601
+2024-10-20 15:49:55,574 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:49:55,575 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:49:55,576 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00046s] ('M',)
+2024-10-20 15:49:55,882 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:49:56,117 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780808 is handled. Duration 547 ms by bot id=8144851601
+2024-10-20 15:49:57,062 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:49:57,063 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:49:57,063 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00044s] ()
+2024-10-20 15:49:57,419 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:49:57,641 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780809 is handled. Duration 577 ms by bot id=8144851601
+2024-10-20 15:49:59,136 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780810 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 15:49:59,136 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780810 by bot id=8144851601
+KeyError: 'time'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 82, in check
+    time = data["time"]
+           ~~~~^^^^^^^^
+KeyError: 'time'
+2024-10-20 15:50:11,637 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 15:50:18,304 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:50:18,396 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:50:19,484 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:50:19,484 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:50:20,264 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:50:20,265 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:50:20,678 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:50:20,679 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:50:20,989 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:50:20,994 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:50:20,994 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00053s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:50:21,309 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:50:21,309 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3152s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:50:21,413 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:50:21,414 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4198s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:50:21,527 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:50:21,528 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5337s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:50:21,642 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:50:23,809 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780811 is not handled. Duration 0 ms by bot id=8144851601
+2024-10-20 15:50:23,809 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780811 by bot id=8144851601
+KeyError: 'category'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 79, in check
+    category = data["category"]
+               ~~~~^^^^^^^^^^^^
+KeyError: 'category'
+2024-10-20 15:50:27,282 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:50:27,288 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:50:27,288 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00048s] (839405003,)
+2024-10-20 15:50:27,633 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:50:28,859 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780812 is handled. Duration 1577 ms by bot id=8144851601
+2024-10-20 15:50:29,632 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780813 is handled. Duration 188 ms by bot id=8144851601
+2024-10-20 15:50:30,140 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:50:30,142 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:50:30,142 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00043s] ('T',)
+2024-10-20 15:50:30,502 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:50:30,839 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780814 is handled. Duration 702 ms by bot id=8144851601
+2024-10-20 15:50:31,654 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:50:31,655 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:50:31,656 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00042s] ()
+2024-10-20 15:50:32,045 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:50:32,365 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780815 is handled. Duration 702 ms by bot id=8144851601
+2024-10-20 15:50:33,206 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780816 is handled. Duration 125 ms by bot id=8144851601
+2024-10-20 15:50:53,878 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:50:53,879 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:50:53,879 [  INFO  ] (base.py:_execute_context:1846): [cached since 22.22s ago] ()
+2024-10-20 15:50:54,089 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:50:55,319 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780817 is handled. Duration 1452 ms by bot id=8144851601
+2024-10-20 15:50:56,311 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780818 is handled. Duration 156 ms by bot id=8144851601
+2024-10-20 15:51:00,639 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:51:00,640 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:51:00,641 [  INFO  ] (base.py:_execute_context:1846): [cached since 28.99s ago] ()
+2024-10-20 15:51:00,851 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:51:01,107 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780819 is handled. Duration 468 ms by bot id=8144851601
+2024-10-20 15:53:18,903 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:53:19,001 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:53:20,063 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:53:20,063 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:53:20,467 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:53:20,467 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:53:20,874 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:53:20,875 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:53:21,181 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:21,186 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:53:21,187 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00084s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:53:21,491 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:53:21,492 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3059s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:53:21,592 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:53:21,593 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4067s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:53:21,708 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:53:21,709 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5226s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:53:21,835 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:53:25,697 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780821 is not handled. Duration 14 ms by bot id=8144851601
+2024-10-20 15:53:25,697 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780821 by bot id=8144851601
+KeyError: 'category'
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 80, in check
+    category = data["category"]
+               ~~~~^^^^^^^^^^^^
+KeyError: 'category'
+2024-10-20 15:53:37,460 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:37,465 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:53:37,465 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00041s] (839405003,)
+2024-10-20 15:53:37,777 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:53:38,926 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780822 is handled. Duration 1468 ms by bot id=8144851601
+2024-10-20 15:53:40,166 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780823 is handled. Duration 264 ms by bot id=8144851601
+2024-10-20 15:53:40,722 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:40,723 [  INFO  ] (base.py:_execute_context:1846): SELECT sub_category.id, sub_category.name, sub_category.article 
+FROM sub_category 
+WHERE sub_category.article = $1::VARCHAR
+2024-10-20 15:53:40,723 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00046s] ('P',)
+2024-10-20 15:53:41,138 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:53:41,337 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780824 is handled. Duration 625 ms by bot id=8144851601
+2024-10-20 15:53:41,923 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:41,924 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:53:41,925 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00040s] ()
+2024-10-20 15:53:42,304 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:53:42,567 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780825 is handled. Duration 641 ms by bot id=8144851601
+2024-10-20 15:53:43,275 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:43,276 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:53:43,276 [  INFO  ] (base.py:_execute_context:1846): [cached since 1.352s ago] ()
+2024-10-20 15:53:43,493 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:53:43,593 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780826 is not handled. Duration 327 ms by bot id=8144851601
+2024-10-20 15:53:43,593 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780826 by bot id=8144851601
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 85, in check
+IndexError: list index out of range
+2024-10-20 15:53:49,073 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:53:49,073 [  INFO  ] (base.py:_execute_context:1846): SELECT departments.id, departments.name, departments.address 
+FROM departments
+2024-10-20 15:53:49,073 [  INFO  ] (base.py:_execute_context:1846): [cached since 7.149s ago] ()
+2024-10-20 15:53:49,323 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:53:49,424 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780827 is not handled. Duration 343 ms by bot id=8144851601
+2024-10-20 15:53:49,425 [ ERROR  ] (dispatcher.py:_process_update:315): Cause exception while process update id=758780827 by bot id=8144851601
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\storage\memory.py", line 56, in lock
+    yield
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\NONE\Desktop\pythoN\jopa\bot\base.py", line 85, in check
+IndexError: list index out of range
+2024-10-20 15:53:55,982 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
+2024-10-20 15:54:03,439 [  INFO  ] (dispatcher.py:start_polling:527): Start polling
+2024-10-20 15:54:03,543 [  INFO  ] (dispatcher.py:_polling:341): Run polling for bot @DonIT_Terminal_bot id=8144851601 - 'DonIT Terminal Bot'
+2024-10-20 15:54:04,771 [  INFO  ] (base.py:_execute_context:1846): select pg_catalog.version()
+2024-10-20 15:54:04,771 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:54:05,211 [  INFO  ] (base.py:_execute_context:1846): select current_schema()
+2024-10-20 15:54:05,212 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:54:05,654 [  INFO  ] (base.py:_execute_context:1846): show standard_conforming_strings
+2024-10-20 15:54:05,654 [  INFO  ] (base.py:_execute_context:1846): [raw sql] ()
+2024-10-20 15:54:05,991 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:54:05,995 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:54:05,996 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00057s] ('users1', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:54:06,335 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:54:06,336 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.3406s ago] ('sub_category', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:54:06,447 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:54:06,448 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.4522s ago] ('departments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:54:06,562 [  INFO  ] (base.py:_execute_context:1846): SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2024-10-20 15:54:06,562 [  INFO  ] (base.py:_execute_context:1846): [cached since 0.5666s ago] ('tickets', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2024-10-20 15:54:06,676 [  INFO  ] (base.py:_connection_commit_impl:2707): COMMIT
+2024-10-20 15:54:06,722 [  INFO  ] (base.py:_connection_begin_impl:2701): BEGIN (implicit)
+2024-10-20 15:54:06,728 [  INFO  ] (base.py:_execute_context:1846): SELECT users1.id, users1.user_id, users1.is_admin, users1.is_operator 
+FROM users1 
+WHERE users1.user_id = $1::INTEGER
+2024-10-20 15:54:06,728 [  INFO  ] (base.py:_execute_context:1846): [generated in 0.00042s] (839405003,)
+2024-10-20 15:54:07,107 [  INFO  ] (base.py:_connection_rollback_impl:2704): ROLLBACK
+2024-10-20 15:54:08,339 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780828 is handled. Duration 4547 ms by bot id=8144851601
+2024-10-20 15:54:09,565 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780829 is handled. Duration 188 ms by bot id=8144851601
+2024-10-20 15:54:10,155 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780830 is handled. Duration 0 ms by bot id=8144851601
+2024-10-20 15:54:14,526 [  INFO  ] (dispatcher.py:feed_update:172): Update id=758780831 is handled. Duration 0 ms by bot id=8144851601
+2024-10-20 15:54:21,993 [  INFO  ] (dispatcher.py:start_polling:554): Polling stopped
