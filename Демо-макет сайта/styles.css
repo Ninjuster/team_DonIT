@@ -1,0 +1,68 @@
+html, body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    position: relative;
+}
+
+.menu-item {
+    position: absolute;
+    width: 377px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 22px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(41, 70, 146);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-item-1 { left: 44px; top: 164px; }
+.menu-item-2 { left: 452px; top: 164px; }
+.menu-item-3 { left: 860px; top: 164px; }
+.menu-item-4 { left: 44px; top: 412px; }
+.menu-item-5 { left: 452px; top: 412px; }
+.menu-item-6 { left: 860px; top: 412px; }
+
+.left-arrow {
+    position: absolute;
+    width: 70px;
+    height: 74px;
+    left: 535px;
+    top: 631px;
+}
+
+.right-arrow {
+    position: absolute;
+    width: 70px;
+    height: 74px;
+    left: 675px;
+    top: 631px;
+}
+
+.footer {
+    position: absolute;
+    width: 210px;
+    height: 31px;
+    left: 1065px;
+    top: 690px;
+    color: rgb(41, 70, 146);
+    font-family: Ubuntu, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: right;
+}

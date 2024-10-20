@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почта Донбасса</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-item menu-item-1" onclick="generatePDF('Почтовые отправления', 'Окно 1')">
+            Почтовые отправления
+        </div>
+        <div class="menu-item menu-item-2" onclick="generatePDF('Платежи', 'Окно 2')">
+            Платежи
+        </div>
+        <div class="menu-item menu-item-3" onclick="generatePDF('Подписка на газеты и журналы', 'Окно 3')">
+            Подписка на газеты и журналы
+        </div>
+        <div class="menu-item menu-item-4" onclick="generatePDF('Почтовые переводы', 'Окно 4')">
+            Почтовые переводы
+        </div>
+        <div class="menu-item menu-item-5" onclick="generatePDF('Стартовые пакеты мобильных операторов', 'Окно 5')">
+            Стартовые пакеты мобильных операторов
+        </div>
+        <div class="menu-item menu-item-6" onclick="generatePDF('Товары народного потребления', 'Окно 6')">
+            Товары народного потребления
+        </div>
+    </div>
+
+    <div class="left-arrow">
+        <svg width="70" height="74" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5L6 24L24 43L24 31L42 31V17H24V5Z" fill="none" stroke="#3338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <div class="right-arrow">
+        <svg width="70" height="74" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 43L42 24L24 5L24 17L6 17V31H24V43Z" fill="none" stroke="#294692" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>    
+
+    <div class="footer">20.10.2024 | 22:61</div>
+</body>
+</html>
